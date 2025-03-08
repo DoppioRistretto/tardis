@@ -18,8 +18,8 @@ Supports gzip compression.`,
 
 	Run: func(cmd *cobra.Command, args []string) {
 
-		archiveName, _ := cmd.Flags().GetString("file")
-		paths, _ := cmd.Flags().GetStringArray("paths")
+		archiveName, _ := cmd.Flags().GetString("archive")
+		paths, _ := cmd.Flags().GetStringArray("path")
 		delete, _ := cmd.Flags().GetBool("delete")
 		verbose, _ := cmd.Flags().GetBool("verbose")
 
@@ -49,11 +49,11 @@ func init() {
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
 	// createCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-	createCmd.Flags().StringVarP(&archiveName, "file", "f", "", "The tar file to create. Use .gz extension for gzip compression")
-	createCmd.MarkFlagRequired("file")
+	createCmd.Flags().StringVarP(&archiveName, "archive", "a", "", "The tar file to create. Use .gz extension for gzip compression")
+	createCmd.MarkFlagRequired("archive")
 
-	createCmd.Flags().StringArrayVarP(&paths, "paths", "p", []string{}, "The paths to include in the tar file")
-	createCmd.MarkFlagRequired("paths")
+	createCmd.Flags().StringArrayVarP(&paths, "path", "p", []string{}, "The paths to include in the tar file")
+	createCmd.MarkFlagRequired("path")
 
 	createCmd.Flags().BoolVar(&delete, "delete", false, "Delete the source files after creating the tar file")
 }
