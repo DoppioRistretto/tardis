@@ -1,3 +1,6 @@
+/*
+Copyright © 2025 Brady Semm <btsemm@protonmail.com>
+*/
 package utilities
 
 import (

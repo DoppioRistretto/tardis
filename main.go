@@ -1,6 +1,5 @@
 /*
-Copyright © 2025 NAME HERE <EMAIL ADDRESS>
-
+Copyright © 2025 Brady Semm <btsemm@protonmail.com>
 */
 package main
 

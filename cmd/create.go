@@ -1,5 +1,5 @@
 /*
-Copyright © 2025 NAME HERE <EMAIL ADDRESS>
+Copyright © 2025 Brady Semm <btsemm@protonmail.com>
 */
 package cmd
 
@@ -9,7 +9,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// createCmd represents the create command
 var createCmd = &cobra.Command{
 	Use:   "create",
 	Short: "Create a tar archive file",
@@ -37,19 +36,11 @@ Supports gzip compression.`,
 func init() {
 	rootCmd.AddCommand(createCmd)
 
-	// Here you will define your flags and configuration settings.
 	var archiveName string
 	var paths []string
 	var delete bool
 
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// createCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// createCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-	createCmd.Flags().StringVarP(&archiveName, "archive", "a", "", "The tar file to create. Use .gz extension for gzip compression")
+	createCmd.Flags().StringVarP(&archiveName, "archive", "a", "", "The tar file to create. Use .gz or .tgz extension for gzip compression")
 	createCmd.MarkFlagRequired("archive")
 
 	createCmd.Flags().StringArrayVarP(&paths, "path", "p", []string{}, "The paths to include in the tar file")
